@@ -1,0 +1,7 @@
+Simple C#-written program which exports http://codeforces.ru contests to Google Calendar events.
+
+Has a feature of filtering exported contests by division.
+
+Requires use of HtmlAgilityPack and Google Data API libraries.
+
+Credentials for Google Account, calendar and division filtering can be set up in app.config (after renaming app.config.dist to app.config).
