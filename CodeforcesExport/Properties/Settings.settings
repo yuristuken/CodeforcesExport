@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CodeforcesExport.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="username" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">codeforcesexport@gmail.com</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">secretpassword</Value>
+    </Setting>
+    <Setting Name="calendarUri" Type="System.Uri" Scope="Application">
+      <Value Profile="(Default)">https://www.google.com/calendar/feeds/default/private/full</Value>
+    </Setting>
+    <Setting Name="divisionExclusion" Type="CodeforcesExport.Division" Scope="Application">
+      <Value Profile="(Default)">First</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
