@@ -51,11 +51,18 @@ namespace CodeforcesExport
 
             Console.WriteLine("Page loaded");
 
+            List<Contest> contests = new List<Contest>();
+
             HtmlNodeCollection contestsNodes = doc.DocumentNode.SelectNodes("//div[@class='contestlist']/div[@class='datatable']/div/table/tr[position() > 1]");
 
+            if (contestsNodes.Count == 1 && contestsNodes[0].SelectSingleNode("./td[1]").FirstChild.InnerText.Trim() == "Соревнования пока отсутствуют")
+            {
+                Console.WriteLine("No contests found");
+                return contests;
+            }
             Console.WriteLine(contestsNodes.Count + " contests found");
 
-            List<Contest> contests = new List<Contest>();
+            
 
             foreach (HtmlNode node in contestsNodes)
             {
