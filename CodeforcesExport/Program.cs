@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +53,7 @@ namespace CodeforcesExport
 
             List<Contest> contests = new List<Contest>();
 
-            HtmlNodeCollection contestsNodes = doc.DocumentNode.SelectNodes("//div[@class='contestlist']/div[@class='datatable']/div/table/tr[position() > 1]");
+            HtmlNodeCollection contestsNodes = doc.DocumentNode.SelectNodes("//div[@class='contestList']/div[@class='datatable']/div/table/tr[position() > 1]");
 
             if (contestsNodes.Count == 1 && contestsNodes[0].SelectSingleNode("./td[1]").FirstChild.InnerText.Trim() == "Соревнования пока отсутствуют")
             {
@@ -84,8 +84,8 @@ namespace CodeforcesExport
                 }
                 contest.Title = m.Groups[1].Value;
 
-                string secondCell = node.SelectSingleNode("./td[2]").ChildNodes[1].InnerText;
-                contest.Start = DateTime.Parse(secondCell);
+                string secondCell = node.SelectSingleNode("./td[2]").ChildNodes[1].InnerText.Trim();
+                contest.Start = DateTime.ParseExact(secondCell, "dd.MM.yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
 
                 string thirdCell = node.SelectSingleNode("./td[3]").ChildNodes[0].InnerText.Trim();
                 TimeSpan ts = TimeSpan.Parse(thirdCell);
