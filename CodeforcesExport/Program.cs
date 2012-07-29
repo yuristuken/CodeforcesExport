@@ -86,6 +86,7 @@ namespace CodeforcesExport
 
                 string secondCell = node.SelectSingleNode("./td[2]").ChildNodes[1].InnerText.Trim();
                 contest.Start = DateTime.ParseExact(secondCell, "dd.MM.yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+                contest.Start = TimeZoneInfo.ConvertTime(contest.Start, TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time"), TimeZoneInfo.Local);
 
                 string thirdCell = node.SelectSingleNode("./td[3]").ChildNodes[0].InnerText.Trim();
                 TimeSpan ts = TimeSpan.Parse(thirdCell);
